@@ -2,7 +2,12 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 
-/* GET users listing. */
+/* GET home page. */
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
+
+
 router.get('/', function(req, res, next) {
   res.render('user_test_view');
 });
@@ -16,7 +21,8 @@ router.post('/', function(req, res, next) {
     password: "totally visable"
   });
   user.save();
-  res.redirect('/');
+  res.redirect('/users');
 });
+
 
 module.exports = router;
